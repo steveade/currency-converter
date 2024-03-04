@@ -3,7 +3,7 @@ import CurrencyInput from "./CurrencyInput"
 import { useState, useEffect } from "react"
 import axios from "axios"
 
-function App() {
+const App = () => {
 
   const [amountOne, setAmountOne] = useState(1)
   const [amountTwo, setAmountTwo] = useState(1)
@@ -12,7 +12,7 @@ function App() {
   const [rates, setRates] = useState([])
 
   useEffect(() => {
-    axios.get("http://data.fixer.io/api/latest?access_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
+    axios.get(`http://data.fixer.io/api/latest?access_key=${import.meta.env.VITE_API_KEY}`)
       .then(response => {
         setRates(response.data.rates)
       })

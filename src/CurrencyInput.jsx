@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import "./CurrencyInput.css"
 
-function CurrencyInput(props) {
+const CurrencyInput = (props) => {
     return (
         <div className="group">
             <input type="text" value={props.amount} 
